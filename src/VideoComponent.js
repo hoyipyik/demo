@@ -5,9 +5,8 @@ import axios from 'axios';
 /**
  * This component is used to upload and show video
  */
-const VideoComponent = ({ url, setUrl }) => {
+const VideoComponent = ({ url, setUrl, setPercentage }) => {
     const [file, setFile] = useState(null)
-    const [percentage, setPercentage] = useState('0%')
 
     const fileSelectHandler = (e) => {
         setUrl('')
@@ -58,10 +57,6 @@ const VideoComponent = ({ url, setUrl }) => {
 
     return (
         <div className='video-component'>
-            {(percentage !== '0%' && percentage !== '100%') && <div>{`Upload progress: ${percentage}`}</div>}
-            {url !== '' && <video controls style={{ height: '10rem', width: '20rem' }}>
-                <source src={url} />
-            </video>}
             <input type='file' onChange={fileSelectHandler} />
             <button onClick={fileUploader}>Upload</button>
         </div>
