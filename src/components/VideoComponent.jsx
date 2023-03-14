@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { cloudName, uploadPreset } from './Const';
+import { cloudName, uploadPreset } from '../tools/Const';
 import axios from 'axios';
 
 /**
@@ -45,6 +45,7 @@ const VideoComponent = ({ url, setUrl, setPercentage }) => {
                     console.log(res, 'result')
                     if (res && res.data["secure_url"] !== '') {
                         setUrl(res.data["secure_url"])
+                        setFile(null)
                     } else {
                         console.log('err')
                     }
@@ -55,6 +56,7 @@ const VideoComponent = ({ url, setUrl, setPercentage }) => {
         }
     }
 
+    console.log('render')
     return (
         <div className='video-component'>
             <input type='file' onChange={fileSelectHandler} />
@@ -63,4 +65,4 @@ const VideoComponent = ({ url, setUrl, setPercentage }) => {
     )
 }
 
-export default VideoComponent
+export default React.memo(VideoComponent)
