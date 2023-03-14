@@ -2,6 +2,9 @@ import React from 'react'
 import videojs from 'video.js'
 import 'video.js/dist/video-js.css'
 
+/**
+ * This component is provided by VideoJS
+ */
 export const VideoJS = (props) => {
   const videoRef = React.useRef(null)
   const playerRef = React.useRef(null)

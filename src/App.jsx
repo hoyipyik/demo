@@ -9,14 +9,16 @@ function App() {
   const [url, setUrl] = useState('')
   const [showFlag, setShowFlag] = useState(true)
   const [percentage, setPercentage] = useState('0%')
-  
+
   return (
     <div>
       {showFlag && <div>
         <Topbar setShowFlag={setShowFlag} />
         <VideoComponent url={url} setUrl={setUrl} setPercentage={setPercentage} />
-        <VideoPlay playerRef={playerRef} percentage={percentage} url={url} />
-        <Comments playerRef={playerRef} />
+        {url !== '' && <>
+          <VideoPlay playerRef={playerRef} percentage={percentage} url={url} />
+          <Comments playerRef={playerRef} url={url} />
+        </>}
       </div>}
     </div>
   )

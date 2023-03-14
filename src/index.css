@@ -2,3 +2,26 @@
     display: grid;
     grid-template-columns: 10fr 1fr;
 }
+
+.comment-box {
+    display: flex;
+    flex-direction: column;
+    width: 20rem;
+    border-radius: 4%;
+    background-color: antiquewhite;
+}
+
+.comment-input-zone {
+    display: grid;
+    grid-template-columns: 1fr 8fr;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+}
+
+.comment-submit-zone{
+    display: grid;
+    grid-template-columns: 7fr 1fr;
+    padding-bottom: 0.5rem;
+    padding-right: 0.5rem;
+}

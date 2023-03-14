@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import VideoJS from './VideoJS'
 import videojs from 'video.js'
 
@@ -25,17 +25,18 @@ const VideoPlay = ({ url, percentage, playerRef }) => {
         })
     }
 
-    const getTimeStampHandler = () => {
-        const player = playerRef.current
-        const currentTime = player.currentTime()
-        console.log(currentTime)
-    }
+    // const getTimeStampHandler = () => {
+    //     const player = playerRef.current
+    //     const currentTime = player.currentTime()
+    //     console.log(currentTime)
+    // }
 
     return (
-        <div>
+        <div style={{marginTop: '2rem'}}>
             {(percentage !== '0%' && percentage !== '100%') && <div>{`Upload progress: ${percentage}`}</div>}
-            {url !== '' && <VideoJS options={videoJsOptions} onReady={handlePlayerReady} />}
-            <button style={{marginTop: '3rem'}} onClick={getTimeStampHandler}>get time</button>
+            <VideoJS options={videoJsOptions} onReady={handlePlayerReady} />
+            {/* <button style={{marginTop: '3rem'}} onClick={getTimeStampHandler}>get time</button> */}
+            <div style={{marginTop: '2rem'}}>Video</div>
         </div>
     )
 }

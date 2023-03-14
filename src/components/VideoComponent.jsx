@@ -58,11 +58,11 @@ const VideoComponent = ({ url, setUrl, setPercentage }) => {
 
     console.log('render')
     return (
-        <div className='video-component'>
+        <div className='video-component' >
             <input type='file' onChange={fileSelectHandler} />
             <button onClick={fileUploader}>Upload</button>
         </div>
     )
 }
 
-export default React.memo(VideoComponent)
+export default VideoComponent
